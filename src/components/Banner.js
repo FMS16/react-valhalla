@@ -9,8 +9,7 @@ const Banner = (props) => {
     <div className='banner'>
       {/* <h1 className='banner-title'>{props.title}</h1> */}
       <img className='banner-logo' src={logo} />
-        <h2 className='subtitle'>{props.subtitle}</h2>
-
+      <h2 className='subtitle'>{props.subtitle}</h2>
     </div>
   )
 }

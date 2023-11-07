@@ -17,7 +17,7 @@ function App() {
       const currentScrollPos = window.scrollY;
       if (currentScrollPos >= 160) {
         setIsSticky(true);
-      } else {
+      }else{
         setIsSticky(false);
       }
     };

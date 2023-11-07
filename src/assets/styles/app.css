@@ -21,8 +21,18 @@ body {
     height: 85px;
 }
 
+.overlay {
+    display: none;
+    /* Ocultar el overlay en pantallas más grandes */
+}
+
 .logo {
     width: 150px;
+}
+
+.mobile-toggle {
+    display: none;
+    /* Ocultar el botón de toggle */
 }
 
 .header-nav {
@@ -280,43 +290,158 @@ img {
     }
 }
 
-.footer{
+.footer {
     background-color: #333;
 }
 
-.container-footer{
+.container-footer {
     display: flex;
     justify-content: space-between;
     padding: 15px;
 }
 
-.footer-item{
+.footer-item {
     padding: 15px;
     width: 49%;
     color: #fff;
 }
 
-.footer-logo{
+.footer-logo {
     text-transform: uppercase;
     letter-spacing: 8px;
     text-decoration: line-through;
     font-family: 'Poppins', sans-serif;
 }
 
-.social-media{
-    
-}
+.social-media {}
 
-.social-media ul{
+.social-media ul {
     display: flex;
     list-style: none;
 }
 
-.social-media ul li{
+.social-media ul li {
     padding: 10px;
     font-size: 30px;
 }
 
-.social-media ul li:first-child{
+.social-media ul li:first-child {
     padding-left: 0;
+}
+
+
+@media screen and (max-width: 768px) {
+
+    /* Estilos para pantallas con un ancho máximo de 768px (comúnmente teléfonos) */
+    .container {
+        width: 100%;
+    }
+
+    .banner {
+        width: 100%;
+        height: 100vh;
+        background-color: #333;
+        background-image: url("../images/galaxia.jpg");
+        background-size: cover;
+    }
+
+    .header-sticky {
+        animation: none;
+        position: fixed;
+        display: flex;
+        justify-content: space-between;
+        top: 0;
+        background-color: #333;
+        width: 100%;
+        height: 80px;
+        padding: 25px;
+    }
+
+    .logo{
+        width: 100px;
+        height: 80px;
+    }
+
+    .header-sticky nav {
+        height: 100vh;
+        background-color: #333;
+        top: 0;
+        position: absolute;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 50%;
+        transform: translateX(0);
+        left: -100%;
+        display: none;
+        animation: mymove 1s;
+    }
+
+    .header-sticky nav ul {
+        display: block;
+        position: relative;
+        margin-top: 35px;
+    }
+
+    .header-sticky nav ul {
+        display: block;
+    }
+
+    .header-sticky nav ul li {
+        padding: 10px;
+    }
+
+    @keyframes mymove {
+        from {
+            left: -100%;
+            /* Cambiar el valor según la altura de tu barra de navegación */
+        }
+
+        to {
+            left: 0;
+        }
+    }
+
+    .mobile-toggle {
+        display: block;
+        background: none;
+        font-size: 30px;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        /* Mostrar el botón de toggle */
+    }
+
+    .header-nav {
+        display: none;
+        /* Ocultar el menú de navegación por defecto */
+    }
+
+    .header-nav.visible {
+        display: block;
+        left: 0;
+        z-index: 20;
+        /* Mostrar el menú de navegación cuando sea necesario */
+    }
+
+    .no-scroll {
+        overflow: hidden;
+    }
+
+    /* Overlay.css */
+    .overlay {
+        position: absolute;
+        top: 0;
+        display: block;
+        left: 0;
+        width: 100%;
+        height: 100vh; /* Cambiar a 100% para cubrir toda la pantalla */
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 15;
+    }
+
+    .subtitle{
+        width: 85%;
+    }
+    
 }
