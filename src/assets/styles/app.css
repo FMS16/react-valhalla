@@ -341,12 +341,23 @@ img {
         width: 100%;
         height: 100vh;
         background-color: #333;
-        background-image: url("../images/galaxiaPhone.jpg");
+        background-image: url("../images/astronauta.jpg");
         background-size: cover;
     }
 
+    @keyframes header {
+        from {
+            top: -70px;
+            /* Cambiar el valor según la altura de tu barra de navegación */
+        }
+
+        to {
+            top: 0;
+        }
+    }
+
     .header-sticky {
-        animation: none;
+        animation: header 1s;
         position: fixed;
         display: flex;
         justify-content: space-between;
